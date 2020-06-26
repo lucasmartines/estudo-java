@@ -11,14 +11,40 @@ package classes.Desafio;
  */
 public class Pessoa {
     String nome;
-    double peso;
     
-    Pessoa(){
+    public Pessoa(){
         this("Sem Nome",0);
     }
-    Pessoa(String nome, double peso){
+    public Pessoa( int idade ){
+        
+        this.setIdade(idade);
+    }
+    
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        if( !nome.equalsIgnoreCase("")){
+            this.nome = nome;    
+        }
+    }
+    double peso;
+    private int idade;
+    
+    
+    public Pessoa(String nome, double peso){
         this.nome = nome;
         this.peso = peso;
+    }
+    public int getIdade(){
+        return idade;
+    }
+    public void setIdade(int idade){
+        if( idade > 0){
+            this.idade = idade;
+        }
     }
     void comer(Comida comida){
         if( comida != null){
